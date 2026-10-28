@@ -1,0 +1,26 @@
+{
+  "name": "automatizacion-metricas-web",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "audit:movil": "cypress run --browser chrome --spec cypress/e2e/lighthouse.cy.js --expose device=mobile",
+  "audit:escritorio": "cypress run --browser chrome --spec cypress/e2e/lighthouse.cy.js --expose device=desktop",
+  "cypress:open": "cypress open",
+  "tick": "node scripts/tick.js",
+  "scheduler": "node scripts/scheduler.js",
+  "report": "http-server . -p 8080 -c-1 -o /report/"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chrome-launcher": "^1.2.2",
+    "cypress": "^16.2.0",
+    "http-server": "^14.1.1",
+    "lighthouse": "^12.8.2"
+  },
+  "dependencies": {
+    "node-cron": "^4.6.0"
+  }
+}
