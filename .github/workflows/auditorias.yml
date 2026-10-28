@@ -1,0 +1,51 @@
+name: Auditorías Lighthouse
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'ID del job a forzar (opcional, ej: movil-diario)'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auditorias
+  cancel-in-progress: false
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: ¿Hay jobs pendientes?
+        id: check
+        run: node scripts/tick.js --check
+
+      - name: Instalar dependencias
+        if: steps.check.outputs.pendientes == 'true' || github.event.inputs.job != ''
+        run: npm ci
+
+      - name: Ejecutar jobs
+        if: steps.check.outputs.pendientes == 'true' || github.event.inputs.job != ''
+        run: node scripts/tick.js ${{ github.event.inputs.job }}
+        env:
+          CI: 'true'
+          SHEETS_WEBHOOK_URL: ${{ secrets.SHEETS_WEBHOOK_URL }}
+          SHEETS_TOKEN: ${{ secrets.SHEETS_TOKEN }}
+
+      - name: Guardar resultados en el repositorio
+        if: steps.check.outputs.pendientes == 'true' || github.event.inputs.job != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "chore(data): resultados de auditoría automática" && git push)
