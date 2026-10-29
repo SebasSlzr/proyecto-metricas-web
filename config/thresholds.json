@@ -1,0 +1,19 @@
+{
+  "_comentario": "menor-mejor: valor <= limiteBueno es Bueno; valor <= limitePorMejorar es Por mejorar; si no, Deficiente. mayor-mejor: valor >= limiteBueno es Bueno; valor >= limitePorMejorar es Por mejorar; si no, Deficiente. Tiempos en milisegundos.",
+  "firstContentfulPaint": {
+    "nombre": "FCP", "unidad": "ms", "direccion": "menor-mejor",
+    "limiteBueno": 1800, "limitePorMejorar": 3000
+  },
+  "largestContentfulPaint": {
+    "nombre": "LCP", "unidad": "ms", "direccion": "menor-mejor",
+    "limiteBueno": 2500, "limitePorMejorar": 4000
+  },
+  "speedIndex": {
+    "nombre": "Speed Index", "unidad": "ms", "direccion": "menor-mejor",
+    "limiteBueno": 3400, "limitePorMejorar": 5800
+  },
+  "performance": {
+    "nombre": "Performance", "unidad": "puntos", "direccion": "mayor-mejor",
+    "limiteBueno": 90, "limitePorMejorar": 50
+  }
+}

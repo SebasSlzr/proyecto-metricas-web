@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Métricas de rendimiento web · UAM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Métricas de rendimiento web · UAM</h1>
+    <p id="actualizado" class="leyenda">Cargando datos…</p>
+  </header>
+  <main>
+    <section id="resumen" class="tarjetas"></section>
+
+    <section>
+      <h2>Resultados actuales</h2>
+      <p class="leyenda"> Bueno ·  Por mejorar ·  Deficiente (umbrales en <code>config/thresholds.json</code>)</p>
+      <div class="scroll"><table id="tabla-actual"></table></div>
+    </section>
+
+    <section>
+      <h2>Comparación móvil vs escritorio</h2>
+      <div class="scroll"><table id="tabla-comparacion"></table></div>
+    </section>
+
+    <section>
+      <h2>Errores</h2>
+      <div id="errores"></div>
+    </section>
+
+    <section>
+      <h2>Historial</h2>
+      <label>Página <select id="filtro-pagina"></select></label>
+      <label>Dispositivo <select id="filtro-device"></select></label>
+      <div class="scroll"><table id="tabla-historial"></table></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
