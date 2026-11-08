@@ -1018,5 +1018,50 @@
     "performance": 87,
     "status": "ok",
     "error": null
+  },
+  {
+    "url": "https://www.autonoma.edu.co/conoce-la-uam/noticias",
+    "pagina": "Noticias",
+    "responsable": "Sebastian Salazar",
+    "device": "desktop",
+    "screenEmulation": "Escritorio (1350x940)",
+    "job": "escritorio-diario",
+    "timestamp": "2026-11-08T22:46:23.932Z",
+    "firstContentfulPaint": 1297,
+    "largestContentfulPaint": 2192,
+    "speedIndex": 1661,
+    "performance": 84,
+    "status": "ok",
+    "error": null
+  },
+  {
+    "url": "https://www.autonoma.edu.co/desarrollo-humano-y-bienestar",
+    "pagina": "Desarrollo humano y bienestar",
+    "responsable": "Daniel Cuartas",
+    "device": "desktop",
+    "screenEmulation": "Escritorio (1350x940)",
+    "job": "escritorio-diario",
+    "timestamp": "2026-11-08T22:46:38.045Z",
+    "firstContentfulPaint": 1433,
+    "largestContentfulPaint": 1667,
+    "speedIndex": 1653,
+    "performance": 87,
+    "status": "ok",
+    "error": null
+  },
+  {
+    "url": "https://www.autonoma.edu.co/aspirantes",
+    "pagina": "Aspirantes",
+    "responsable": "Andres Castrillon",
+    "device": "desktop",
+    "screenEmulation": "Escritorio (1350x940)",
+    "job": "escritorio-diario",
+    "timestamp": "2026-11-08T22:46:51.384Z",
+    "firstContentfulPaint": 961,
+    "largestContentfulPaint": 1054,
+    "speedIndex": 1954,
+    "performance": 93,
+    "status": "ok",
+    "error": null
   }
 ]
